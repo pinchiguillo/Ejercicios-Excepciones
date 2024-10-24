@@ -1,27 +1,50 @@
 #include<iostream>
+#include <locale>
 
-// Variable global que actúa como bandera de error
-bool errorFlag = false;
+#include "Ejercicio1/flags.h"
+#include "Ejercicio2/e2.h"
+#include "Ejercicio3/e3.h"
+#include "Ejercicio4/MiExcepcion.h"
 
-int divide(int a, int b) {
-    if (b == 0) {
-        // Si ocurre un error, se establece la bandera de error
-        errorFlag = true;
-        return 0;
-    }
-    else {
-        return a / b;
-    }
-}
+using namespace std;
 
 int main() {
     int result = divide(5, 0);
 
+    setlocale(LC_ALL, "es_ES.UTF-8");
+
     // Se verifica regularmente la bandera de error
     if (errorFlag) {
-        std::cout << "Ocurrió un error: división por cero." << std::endl;
+        cout << "Ocurrió un error: división por cero." << endl;
         // Se maneja el error y se reinicia la bandera
         errorFlag = false;
+    }
+
+    int resultError = divideError(5, 0);
+    if (resultError == -1) {
+        std::cout << "Error: división por cero." << std::endl;
+    }
+
+    // Uso de la versión que lanza una excepción
+    try {
+        int resultException = divideException(5, 0);
+    }
+    catch (const std::invalid_argument& e) {
+        std::cout << "Excepción: " << e.what() << std::endl;
+    }
+
+    try {
+        func1();
+    }
+    catch (const std::runtime_error& e) {
+        std::cout << "Excepción capturada en main: " << e.what() << std::endl;
+    }
+
+    try {
+        lanzaExcepcion();
+    }
+    catch (const MiExcepcion& e) {
+        std::cout << "Excepción capturada: " << e.what() << std::endl;
     }
 
     return 0;
