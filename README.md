@@ -239,6 +239,7 @@ int main() {
 }
 ```
 Cuando ejecutes este programa, deberías ver que se lanza una excepción que no es capturada, lo que causa que el programa termine abruptamente. El mensaje de la excepción debería imprimirse en la consola.
+![ejercicio6_caput](docs/ejercicio6_caput.png)
 
 Adquisición de recursos:
 ### Ejercicio 7:
