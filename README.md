@@ -5,31 +5,39 @@
 ## Enunciado de Ejercicios
 Los enfoques de bajo nivel: Banderas e interrupciones y tratamiento de los errores en lenguaje C:
 
-### Ejercicio: Implementa un programa en C++ que simule un sistema con banderas de error. Si ocurre un error, en lugar de lanzar una excepción, establece una bandera de error. Luego, comprueba regularmente la bandera de error para manejarla.
+### Ejercicio 1:
+Implementa un programa en C++ que simule un sistema con banderas de error. Si ocurre un error, en lugar de lanzar una excepción, establece una bandera de error. Luego, comprueba regularmente la bandera de error para manejarla.
 Las excepciones son más seguras que los errores:
 
-### Ejercicio: Implementa dos versiones de una función que pueda provocar un error (como la división por cero). La primera versión debe manejar el error devolviendo un valor de error, mientras que la segunda versión debe lanzar una excepción en caso de error. Compara la seguridad y facilidad de uso de ambas versiones.
+### Ejercicio 2:
+Implementa dos versiones de una función que pueda provocar un error (como la división por cero). La primera versión debe manejar el error devolviendo un valor de error, mientras que la segunda versión debe lanzar una excepción en caso de error. Compara la seguridad y facilidad de uso de ambas versiones.
 Propagación explícita:
 
-### Ejercicio: Crea un programa que demuestre cómo se propaga una excepción a través de varias funciones. Asegúrate de que algunas funciones no manejen la excepción, de modo que tenga que propagarse hasta una función que la maneje.
+### Ejercicio 3:
+Crea un programa que demuestre cómo se propaga una excepción a través de varias funciones. Asegúrate de que algunas funciones no manejen la excepción, de modo que tenga que propagarse hasta una función que la maneje.
 Tipos de excepciones personalizadas: Definición de clases de excepción, Instanciación de clases, Clases de excepción derivadas:
 
-### Ejercicio: Define tus propias clases de excepción que hereden de la clase std::exception. Haz que estas clases representen diferentes tipos de errores que podrían ocurrir en tu programa. Utiliza estas excepciones en tu programa y asegúrate de que se manejan correctamente.
+### Ejercicio 4:
+Define tus propias clases de excepción que hereden de la clase std::exception. Haz que estas clases representen diferentes tipos de errores que podrían ocurrir en tu programa. Utiliza estas excepciones en tu programa y asegúrate de que se manejan correctamente.
 Manejo de una excepción y reactivación:
 
-### Ejercicio: Escribe un programa en el que una función lanza una excepción, la cual es manejada en otra parte del programa. Luego, la excepción se relanza para que sea manejada por otro manejador de excepciones.
+### Ejercicio 5:
+Escribe un programa en el que una función lanza una excepción, la cual es manejada en otra parte del programa. Luego, la excepción se relanza para que sea manejada por otro manejador de excepciones.
 Excepciones no interceptadas:
 
-### Ejercicio: Escribe un programa que lance una excepción que no sea capturada por ningún bloque de catch. Observa lo que sucede cuando se ejecuta el programa.
+### Ejercicio 6:
+Escribe un programa que lance una excepción que no sea capturada por ningún bloque de catch. Observa lo que sucede cuando se ejecuta el programa.
 Adquisición de recursos:
 
-###Ejercicio: Implementa una clase que adquiere un recurso (como memoria dinámica o un archivo) en su constructor y libera el recurso en su destructor. Haz que el constructor lance una excepción si no se puede adquirir el recurso. Demuestra que, a pesar de la excepción, no se produce una fuga de recursos.
+### Ejercicio 7:
+Implementa una clase que adquiere un recurso (como memoria dinámica o un archivo) en su constructor y libera el recurso en su destructor. Haz que el constructor lance una excepción si no se puede adquirir el recurso. Demuestra que, a pesar de la excepción, no se produce una fuga de recursos.
 Recuerda que debes encerrar cada uno de estos ejercicios en bloques de try/catch para manejar las excepciones y así evitar que tu programa se cierre inesperadamente.
 
 ## Resolución de Ejercicios Paso a Paso
 
 Los enfoques de bajo nivel: Banderas e interrupciones y tratamiento de los errores en lenguaje C:
-### Ejercicio: Implementa un programa en C++ que simule un sistema con banderas de error. Si ocurre un error, en lugar de lanzar una excepción, establece una bandera de error. Luego, comprueba regularmente la bandera de error para manejarla.
+### Ejercicio 1:
+Implementa un programa en C++ que simule un sistema con banderas de error. Si ocurre un error, en lugar de lanzar una excepción, establece una bandera de error. Luego, comprueba regularmente la bandera de error para manejarla.
 Resolución:
 ```cpp
 #include<iostream>
@@ -64,7 +72,8 @@ int main() {
 Este programa intenta dividir 5 por 0, lo que debería causar un error. En lugar de lanzar una excepción, establece una bandera de error, que luego se comprueba en el programa principal.
 
 Las excepciones son más seguras que los errores:
-### Ejercicio: Implementa dos versiones de una función que pueda provocar un error (como la división por cero). La primera versión debe manejar el error devolviendo un valor de error, mientras que la segunda versión debe lanzar una excepción en caso de error. Compara la seguridad y facilidad de uso de ambas versiones.
+### Ejercicio 2:
+Implementa dos versiones de una función que pueda provocar un error (como la división por cero). La primera versión debe manejar el error devolviendo un valor de error, mientras que la segunda versión debe lanzar una excepción en caso de error. Compara la seguridad y facilidad de uso de ambas versiones.
 Resolución:
 ```cpp
 #include<iostream>
@@ -111,7 +120,8 @@ int main() {
 Este programa implementa dos versiones de una función que divide dos números. La primera versión devuelve un valor de error en caso de error (división por cero), mientras que la segunda versión lanza una excepción en caso de error. Luego, se usan ambas versiones de la función en el programa principal, y se manejan los posibles errores.
 
 Propagación explícita:
-### Ejercicio: Crea un programa que demuestre cómo se propaga una excepción a través de varias funciones. Asegúrate de que algunas funciones no manejen la excepción, de modo que tenga que propagarse hasta una función que la maneje.
+### Ejercicio 3:
+Crea un programa que demuestre cómo se propaga una excepción a través de varias funciones. Asegúrate de que algunas funciones no manejen la excepción, de modo que tenga que propagarse hasta una función que la maneje.
 Resolución:
 ```cpp
 #include<iostream>
@@ -143,7 +153,8 @@ int main() {
 Este programa demuestra la propagación de excepciones. Una excepción lanzada en func3 se propaga a través de func2 y func1 hasta main, donde finalmente se captura y se maneja.
 
 Tipos de excepciones personalizadas: Definición de clases de excepción, instanciación de clases y clases de excepción derivadas:
-### Ejercicio: Define una clase de excepción personalizada llamada MiExcepcion, que hereda de std::exception. Añade un mensaje de error personalizado a la clase. Luego, en una función, lanza una excepción de este tipo. En el método main, captura y maneja esta excepción.
+### Ejercicio 4:
+Define una clase de excepción personalizada llamada MiExcepcion, que hereda de std::exception. Añade un mensaje de error personalizado a la clase. Luego, en una función, lanza una excepción de este tipo. En el método main, captura y maneja esta excepción.
 Resolución:
 ```cpp
 #include<iostream>
@@ -179,7 +190,8 @@ int main() {
 En este programa, se define una clase de excepción personalizada MiExcepcion que hereda de std::exception. Esta clase contiene un mensaje de error personalizado que se pasa al constructor. La función lanzaExcepcion lanza una excepción de este tipo, que luego se captura y se maneja en main.
 
 Manejo de una excepción y reactivación:
-### Ejercicio: Implementa un programa que lance una excepción, la capture, realice alguna acción para manejarla y luego relance la excepción. Asegúrate de que la excepción relanzada sea capturada y manejada en otro lugar.
+### Ejercicio 5:
+Implementa un programa que lance una excepción, la capture, realice alguna acción para manejarla y luego relance la excepción. Asegúrate de que la excepción relanzada sea capturada y manejada en otro lugar.
 Resolución:
 ```cpp
 #include<iostream>
@@ -226,7 +238,8 @@ int main() {
 Cuando ejecutes este programa, deberías ver que se lanza una excepción que no es capturada, lo que causa que el programa termine abruptamente. El mensaje de la excepción debería imprimirse en la consola.
 
 Adquisición de recursos:
-### Ejercicio: Implementa un programa que abra un archivo de texto para escritura (usando std::ofstream). Luego, en un bloque try/catch, intenta escribir en el archivo. Si ocurre un error (puedes simularlo cerrando el archivo antes de intentar escribir en él), lanza y maneja una excepción. Asegúrate de cerrar el archivo correctamente en todos los casos.
+### Ejercicio 6:
+Implementa un programa que abra un archivo de texto para escritura (usando std::ofstream). Luego, en un bloque try/catch, intenta escribir en el archivo. Si ocurre un error (puedes simularlo cerrando el archivo antes de intentar escribir en él), lanza y maneja una excepción. Asegúrate de cerrar el archivo correctamente en todos los casos.
 Resolución:
 ```cpp
 #include<iostream>
