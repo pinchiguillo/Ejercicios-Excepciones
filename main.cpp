@@ -5,6 +5,7 @@
 #include "Ejercicio2/e2.h"
 #include "Ejercicio3/e3.h"
 #include "Ejercicio4/MiExcepcion.h"
+#include "Ejercicio7/e7.h"
 
 using namespace std;
 
@@ -45,6 +46,24 @@ int main() {
     }
     catch (const MiExcepcion& e) {
         std::cout << "Excepción capturada: " << e.what() << std::endl;
+    }
+
+    //lanzaExcepcion();
+    // EXCEPCION NO CONTROLADA -> TERMINA EL PROGRAMA
+
+    std::ofstream file("archivo.txt");
+
+    try {
+        file.close(); // Cierra el archivo para simular un error
+        escribeEnArchivo(file);
+    }
+    catch (const std::runtime_error& e) {
+        std::cout << "Excepción capturada: " << e.what() << std::endl;
+    }
+
+    // Asegurarse de que el archivo esté cerrado
+    if (file.is_open()) {
+        file.close();
     }
 
     return 0;
