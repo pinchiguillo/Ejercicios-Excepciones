@@ -217,11 +217,14 @@ int main() {
 
     return 0;
 }
+```
 Este programa lanza una excepción que se captura y maneja en un bloque catch interno. Luego, la excepción se relanza y se captura en un bloque catch externo.
 
 Excepciones no interceptadas:
-Ejercicio: Escribe un programa que lance una excepción que no sea capturada. Observa qué sucede cuando se ejecuta el programa.
+### Ejercicio 6:
+Escribe un programa que lance una excepción que no sea capturada. Observa qué sucede cuando se ejecuta el programa.
 Resolución:
+```cpp
 #include<iostream>
 #include<stdexcept>
 
@@ -238,7 +241,7 @@ int main() {
 Cuando ejecutes este programa, deberías ver que se lanza una excepción que no es capturada, lo que causa que el programa termine abruptamente. El mensaje de la excepción debería imprimirse en la consola.
 
 Adquisición de recursos:
-### Ejercicio 6:
+### Ejercicio 7:
 Implementa un programa que abra un archivo de texto para escritura (usando std::ofstream). Luego, en un bloque try/catch, intenta escribir en el archivo. Si ocurre un error (puedes simularlo cerrando el archivo antes de intentar escribir en él), lanza y maneja una excepción. Asegúrate de cerrar el archivo correctamente en todos los casos.
 Resolución:
 ```cpp
