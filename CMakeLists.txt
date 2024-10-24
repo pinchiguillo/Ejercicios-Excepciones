@@ -3,5 +3,8 @@ project(Ejercicios_Excepciones)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Ejercicios_Excepciones
+add_executable(Ejercicio1
     main.cpp)
+
+add_executable(Ejercicio2
+        main2.cpp)
